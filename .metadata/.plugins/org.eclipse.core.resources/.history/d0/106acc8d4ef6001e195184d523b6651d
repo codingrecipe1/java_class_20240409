@@ -1,0 +1,11 @@
+package pkg1; // 현재 클래스가 소속된 패키지
+
+// 현재 클래스 이름 
+public class ExClass1 { // 클래스의 시작  
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
