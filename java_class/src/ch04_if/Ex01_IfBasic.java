@@ -23,6 +23,26 @@ public class Ex01_IfBasic {
         } else { // num2 >= num1
             System.out.println("num2가 크다");
         }
+        
+        // if else if 
+        if (num1 > num2) {
+            System.out.println("num1 이 크다");
+        } else if (num1 < num2) {
+            System.out.println("num2 가 크다");
+        } else if (num1 == num2) {
+            System.out.println("같다");
+        } else {
+            System.out.println("비교할 수 없다");
+        }
 
     }
 }
+
+
+
+
+
+
+
+
+
