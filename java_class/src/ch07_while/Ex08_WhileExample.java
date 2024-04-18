@@ -32,7 +32,7 @@ public class Ex08_WhileExample {
                     System.out.println("잔고가 부족합니다.");
                     System.out.println("현재잔액은 " + balance + "원 입니다.");
                 } else {
-                    // withdraw >= balance
+                    // withdraw <= balance
                     balance -= withdraw;
                     System.out.println("출금이 완료되었습니다.");
                     System.out.println("현재잔액은 " + balance + "원 입니다.");
