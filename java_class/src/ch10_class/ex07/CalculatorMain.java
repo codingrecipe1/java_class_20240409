@@ -12,6 +12,8 @@ public class CalculatorMain {
         Scanner scanner = new Scanner(System.in);
         boolean run = true;
         int selectNo = 0;
+        int num1 = 0, num2 = 0;
+        Calculator calculator = new Calculator();
 
         while (run) {
             System.out.println("--------------------------------------------------------------");
@@ -19,6 +21,31 @@ public class CalculatorMain {
             System.out.println("--------------------------------------------------------------");
             System.out.print("선택> ");
             selectNo = scanner.nextInt();
+            if (selectNo == 1) {
+                System.out.print("첫번째 숫자: ");
+                num1 = scanner.nextInt();
+                System.out.print("두번째 숫자: ");
+                num2 = scanner.nextInt();
+                calculator.sum(num1, num2);
+            } else if (selectNo == 2) {
+                System.out.print("첫번째 숫자: ");
+                num1 = scanner.nextInt();
+                System.out.print("두번째 숫자: ");
+                num2 = scanner.nextInt();
+                calculator.sub(num1, num2);
+            } else if (selectNo == 3) {
+                System.out.print("첫번째 숫자: ");
+                num1 = scanner.nextInt();
+                System.out.print("두번째 숫자: ");
+                num2 = scanner.nextInt();
+                int result = calculator.mul(num1, num2);
+                System.out.println("result = " + result);
+            } else if (selectNo == 4) {
+                int result = calculator.div();
+                System.out.println("result = " + result);
+            } else if (selectNo == 5) {
+                run = false;
+            }
         }
     }
 }
