@@ -9,7 +9,9 @@ public class StudentRepository {
      * 저장, 수정, 삭제 등의 작업은 Repository 클래스에서만 하기 위해
      * private으로 다른클래스에서는 접근을 못하도록 함
      */
-    private List<StudentDTO> studentDTOList = new ArrayList<>();
+    private static List<StudentDTO> studentDTOList = new ArrayList<>();
+    // id값을 위한 변수
+    private static long studentId = 1L;
 
     /**
      * method name: method2
@@ -23,10 +25,25 @@ public class StudentRepository {
 
     public void method3(StudentDTO studentDTO) {
         System.out.println("studentDTO = " + studentDTO);
+        studentDTO.setId(studentId++);
         studentDTOList.add(studentDTO);
     }
 
     public List<StudentDTO> method4() {
         return studentDTOList;
+    }
+
+    public StudentDTO method5(long id) {
+        System.out.println("id = " + id);
+        StudentDTO studentDTO = null;
+        for (int i = 0; i < studentDTOList.size(); i++) {
+            if (id == studentDTOList.get(i).getId()) {
+//                return studentDTOList.get(i);
+                studentDTO = studentDTOList.get(i);
+//            } else {
+//                return null;
+            }
+        }
+        return studentDTO;
     }
 }
