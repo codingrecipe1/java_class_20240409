@@ -53,6 +53,51 @@ public class BookService {
             System.out.println("조회결과가 없습니다!");
         }
     }
+
+    public void update() {
+        // 수정할 책의 id를 입력받음
+        // 책이 있다면 수정할 가격을 입력받고 수정처리
+        //  => 책 조회가 안된다면 없다고 출력
+        System.out.print("수정할 id: ");
+        long id = scanner.nextLong();
+        BookDTO bookDTO = bookRepository.findById(id);
+        if (bookDTO != null) {
+            System.out.print("수정할 가격: ");
+            int bookPrice = scanner.nextInt();
+            boolean updateResult = bookRepository.update(id, bookPrice);
+            if (updateResult) {
+                System.out.println("수정 성공");
+            } else {
+                System.out.println("수정 실패");
+            }
+        } else {
+            System.out.println("조회결과가 없습니다!");
+        }
+    }
+
+    public void delete() {
+        System.out.print("삭제할 id: ");
+        long id = scanner.nextLong();
+        boolean result = bookRepository.delete(id);
+        if (result) {
+            System.out.println("삭제 성공");
+        } else {
+            System.out.println("삭제 실패");
+        }
+    }
+
+    public void search() {
+        System.out.print("검색어: ");
+        String q = scanner.next();
+        List<BookDTO> bookDTOList = bookRepository.search(q);
+        if (bookDTOList.size() > 0) {
+            for (BookDTO bookDTO: bookDTOList) {
+                System.out.println("bookDTO = " + bookDTO);
+            }
+        } else {
+            System.out.println("검색결과가 없습니다!");
+        }
+    }
 }
 
 
