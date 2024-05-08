@@ -8,7 +8,7 @@ public class Ex07_ArrayExample {
         int temp = 0;
         for (int i = 0; i < numbers.length; i++) {
             for (int j = i + 1; j < numbers.length; j++) {
-                if (numbers[i] > numbers[j]) {
+                if (numbers[i] < numbers[j]) {
                     temp = numbers[i];
                     numbers[i] = numbers[j];
                     numbers[j] = temp;
