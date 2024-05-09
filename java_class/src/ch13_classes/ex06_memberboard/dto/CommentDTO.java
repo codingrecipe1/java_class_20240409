@@ -54,9 +54,7 @@ public class CommentDTO {
 
     }
 
-    private static Long idValue = 1L;
-
-    public CommentDTO(Long boardId, String commentWriter, String commentContents) {
+    public CommentDTO(long boardId, String commentWriter, String commentContents) {
         this.boardId = boardId;
         this.commentWriter = commentWriter;
         this.commentContents = commentContents;
